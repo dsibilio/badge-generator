@@ -1,4 +1,6 @@
 # Badge Generator
+![Build Status](https://github.com/dsibilio/badge-generator/workflows/build/badge.svg)
+
 
 `badge-generator` is a **reactive SVG badge generator** able to produce both static badges and dynamically rendered quality/coverage badges from a private _Sonar_ server.
 
