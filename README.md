@@ -38,7 +38,7 @@ Once the application is up and running, you can query the APIs specified in the 
 
 Run the Unit Tests with `mvnw verify`. 
 
-Run all tests, including Integration Tests, with `mvn verify -PtestIT`.
+Run all tests, including Integration Tests, with `mvnw verify -PtestIT`.
 
 ## Reference Documentation
 For further reference, please consider the following sections:
