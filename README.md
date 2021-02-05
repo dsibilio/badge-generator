@@ -34,6 +34,12 @@ Once the application is up and running, you can query the APIs specified in the 
 
 `http://localhost:8080/badges/coverage/sonarProjectKey`
 
+## Testing
+
+Run the Unit Tests with `mvnw verify`. 
+
+Run all tests, including Integration Tests, with `mvn verify -PtestIT`.
+
 ## Reference Documentation
 For further reference, please consider the following sections:
 
