@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "551217eb-5ed5-4875-9f25-34509c3f8aa1",
+		"name": "Sonar QGate Mock",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "failed-gate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/qualitygates/project_status?projectKey=failed-gate",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"qualitygates",
+						"project_status"
+					],
+					"query": [
+						{
+							"key": "projectKey",
+							"value": "failed-gate"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "failed-gate",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic dXNlcjpwYXNzd29yZA==",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/qualitygates/project_status?projectKey=failed-gate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"qualitygates",
+								"project_status"
+							],
+							"query": [
+								{
+									"key": "projectKey",
+									"value": "failed-gate"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"projectStatus\": {\n        \"status\": \"ERROR\",\n        \"conditions\": [\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"sqale_rating\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"1\",\n                \"actualValue\": \"1\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"coverage\",\n                \"comparator\": \"LT\",\n                \"errorThreshold\": \"80\",\n                \"actualValue\": \"79.4\"\n            },\n            {\n                \"status\": \"ERROR\",\n                \"metricKey\": \"blocker_violations\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"0\",\n                \"actualValue\": \"2\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"critical_violations\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"10\",\n                \"actualValue\": \"8\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"new_bugs\",\n                \"comparator\": \"GT\",\n                \"periodIndex\": 1,\n                \"errorThreshold\": \"0\",\n                \"actualValue\": \"0\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"reliability_remediation_effort\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"120\",\n                \"actualValue\": \"0\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"reopened_issues\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"0\",\n                \"actualValue\": \"0\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"security_remediation_effort\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"0\",\n                \"actualValue\": \"0\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"skipped_tests\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"0\",\n                \"actualValue\": \"0\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"sqale_debt_ratio\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"5.0\",\n                \"actualValue\": \"0.2\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"test_errors\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"0\",\n                \"actualValue\": \"0\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"test_failures\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"0\",\n                \"actualValue\": \"0\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"total_vulnerabilities\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"100\",\n                \"actualValue\": \"14\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"vulnerabilities\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"40\",\n                \"actualValue\": \"14\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"vulnerable_dependencies\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"10\",\n                \"actualValue\": \"7\"\n            }\n        ],\n        \"periods\": [\n            {\n                \"index\": 1,\n                \"mode\": \"previous_version\",\n                \"date\": \"2021-02-03T08:57:22+0000\",\n                \"parameter\": \"2.8.0-SNAPSHOT\"\n            }\n        ],\n        \"ignoredConditions\": false\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "ok-gate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/qualitygates/project_status?projectKey=ok-gate",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"qualitygates",
+						"project_status"
+					],
+					"query": [
+						{
+							"key": "projectKey",
+							"value": "ok-gate"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok-gate",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/qualitygates/project_status?projectKey=ok-gate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"qualitygates",
+								"project_status"
+							],
+							"query": [
+								{
+									"key": "projectKey",
+									"value": "ok-gate"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"projectStatus\": {\n        \"status\": \"OK\",\n        \"conditions\": [\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"sqale_rating\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"1\",\n                \"actualValue\": \"1\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"coverage\",\n                \"comparator\": \"LT\",\n                \"errorThreshold\": \"80\",\n                \"actualValue\": \"89.4\"\n            },\n            {\n                \"status\": \"ERROR\",\n                \"metricKey\": \"blocker_violations\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"0\",\n                \"actualValue\": \"2\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"critical_violations\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"10\",\n                \"actualValue\": \"8\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"new_bugs\",\n                \"comparator\": \"GT\",\n                \"periodIndex\": 1,\n                \"errorThreshold\": \"0\",\n                \"actualValue\": \"0\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"reliability_remediation_effort\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"120\",\n                \"actualValue\": \"0\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"reopened_issues\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"0\",\n                \"actualValue\": \"0\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"security_remediation_effort\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"0\",\n                \"actualValue\": \"0\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"skipped_tests\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"0\",\n                \"actualValue\": \"0\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"sqale_debt_ratio\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"5.0\",\n                \"actualValue\": \"0.2\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"test_errors\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"0\",\n                \"actualValue\": \"0\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"test_failures\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"0\",\n                \"actualValue\": \"0\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"total_vulnerabilities\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"100\",\n                \"actualValue\": \"14\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"vulnerabilities\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"40\",\n                \"actualValue\": \"14\"\n            },\n            {\n                \"status\": \"OK\",\n                \"metricKey\": \"vulnerable_dependencies\",\n                \"comparator\": \"GT\",\n                \"errorThreshold\": \"10\",\n                \"actualValue\": \"7\"\n            }\n        ],\n        \"periods\": [\n            {\n                \"index\": 1,\n                \"mode\": \"previous_version\",\n                \"date\": \"2021-02-03T08:57:22+0000\",\n                \"parameter\": \"2.8.0-SNAPSHOT\"\n            }\n        ],\n        \"ignoredConditions\": false\n    }\n}"
+				}
+			]
+		}
+	]
+}

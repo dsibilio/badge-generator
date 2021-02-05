@@ -1,5 +1,6 @@
 package io.github.dsibilio.badges;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import org.junit.jupiter.api.Test;
@@ -15,6 +16,11 @@ class BadgeGeneratorApplicationTests {
 	@Test
 	void contextLoads() {
 		assertNotNull(app);
+	}
+
+	@Test
+	void doesNotThrow() {
+		assertDoesNotThrow(() -> BadgeGeneratorApplication.main(new String[0]));
 	}
 
 }
