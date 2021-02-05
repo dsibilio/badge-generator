@@ -6,7 +6,7 @@
 
 ## Configuration
 
-If you intend to generate dynamic Sonar badges, you must include the following properties in the [application.yml](https://github.com/dsibilio/badge-generator/blob/main/src/main/resources/config/application.yml) file:
+You must include the following properties in the [application.yml](https://github.com/dsibilio/badge-generator/blob/main/src/main/resources/config/application.yml) file:
 
 ```yaml
 sonar:
