@@ -1,5 +1,5 @@
 # Badge Generator
-![Build Status](https://github.com/dsibilio/badge-generator/workflows/build/badge.svg)
+![Build Status](https://github.com/dsibilio/badge-generator/workflows/build/badge.svg) [![Code Coverage](https://codecov.io/github/dsibilio/badge-generator/coverage.svg?branch=main)](https://codecov.io/github/dsibilio/badge-generator?branch=main)
 
 
 `badge-generator` is a **reactive SVG badge generator** able to produce both static badges and dynamically rendered quality/coverage badges from a private _Sonar_ server.
