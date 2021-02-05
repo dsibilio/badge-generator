@@ -1,0 +1,4 @@
+sonar:
+  username: user
+  password: password
+  uri: https://107191a7-b67d-4871-bd61-7783d332be6f.mock.pstmn.io

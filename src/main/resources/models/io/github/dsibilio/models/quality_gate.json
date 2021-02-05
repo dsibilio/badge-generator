@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/QualityGate",
+  "definitions": {
+      "QualityGate": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+              "projectStatus": {
+                  "$ref": "#/definitions/ProjectStatus"
+              }
+          },
+          "title": "QualityGate"
+      },
+      "ProjectStatus": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+              "status": {
+                  "$ref": "#/definitions/Status"
+              },
+              "conditions": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/Condition"
+                  }
+              },
+              "periods": {
+                  "type": "array",
+                  "items": {
+                      "$ref": "#/definitions/Period"
+                  }
+              },
+              "ignoredConditions": {
+                  "type": "boolean"
+              }
+          },
+          "title": "ProjectStatus"
+      },
+      "Condition": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+              "status": {
+                  "$ref": "#/definitions/Status"
+              },
+              "metricKey": {
+                  "type": "string"
+              },
+              "comparator": {
+                  "$ref": "#/definitions/Comparator"
+              },
+              "errorThreshold": {
+                  "type": "string"
+              },
+              "actualValue": {
+                  "type": "string"
+              },
+              "periodIndex": {
+                  "type": "integer"
+              }
+          },
+          "title": "Condition"
+      },
+      "Period": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+              "index": {
+                  "type": "integer"
+              },
+              "mode": {
+                  "type": "string"
+              },
+              "date": {
+                  "type": "string"
+              },
+              "parameter": {
+                  "type": "string"
+              }
+          },
+          "title": "Period"
+      },
+      "Comparator": {
+          "type": "string",
+          "enum": [
+              "GT",
+              "LT"
+          ],
+          "title": "Comparator"
+      },
+      "Status": {
+          "type": "string",
+          "enum": [
+              "OK",
+              "ERROR"
+          ],
+          "title": "Status"
+      }
+  }
+}

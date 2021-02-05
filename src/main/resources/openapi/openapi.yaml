@@ -1,0 +1,131 @@
+openapi: "3.0.0"
+info:
+  description: "A reactive badge generator"
+  version: "1.0.0"
+  title: "Badge Generator"
+  contact:
+    name: "Domenico Sibilio"
+    email: "domenicosibilio@gmail.com"
+tags: 
+  - name: Badges API
+paths:
+  /badges/{message}:
+    get:
+      summary: "Generate a static badge"
+      operationId: "getBadge"
+      parameters: 
+        - in: path
+          name: message
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - in: query
+          name: label
+          schema:
+            type: string
+        - in: query
+          name: messageColor
+          schema:
+            $ref: "#/components/schemas/NamedColor"
+        - in: query
+          name: labelColor
+          schema:
+            $ref: "#/components/schemas/NamedColor"
+        - in: query
+          name: logo
+          schema:
+            type: string
+      responses:
+        200:
+          description: "The request has been accepted"
+          content:
+            image/svg+xml:
+              schema:
+                type: string
+                format: binary
+        400:
+          description: "Message validation exception"
+        500:
+          description: "Internal server error"
+      tags:
+        - Badges API
+  /badges/coverage/{projectKey}:
+    get:
+      summary: "Generate a dynamic Sonar Coverage badge"
+      operationId: "getSonarCoverageBadge"
+      parameters: 
+        - in: path
+          name: projectKey
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - in: query
+          name: label
+          schema:
+            type: string
+        - in: query
+          name: labelColor
+          schema:
+            $ref: "#/components/schemas/NamedColor"
+        - in: query
+          name: logo
+          schema:
+            type: string
+      responses:
+        200:
+          description: "The request has been accepted"
+          content:
+            image/svg+xml:
+              schema:
+                type: string
+                format: binary
+        400:
+          description: "Message validation exception"
+        500:
+          description: "Internal server error"
+      tags:
+        - Badges API
+  /badges/quality/{projectKey}:
+    get:
+      summary: "Generate a dynamic Sonar Quality Gate badge"
+      operationId: "getSonarQualityBadge"
+      parameters: 
+        - in: path
+          name: projectKey
+          required: true
+          schema:
+            type: string
+            minLength: 1
+        - in: query
+          name: label
+          schema:
+            type: string
+        - in: query
+          name: labelColor
+          schema:
+            $ref: "#/components/schemas/NamedColor"
+        - in: query
+          name: logo
+          schema:
+            type: string
+      responses:
+        200:
+          description: "The request has been accepted"
+          content:
+            image/svg+xml:
+              schema:
+                type: string
+                format: binary
+        400:
+          description: "Message validation exception"
+        500:
+          description: "Internal server error"
+      tags:
+        - Badges API
+components:
+  schemas:
+    NamedColor:
+      type: string
+      enum: [ BRIGHTGREEN, GREEN, YELLOW, YELLOWGREEN, ORANGE, RED, BLUE, GREY, LIGHTGREY ]
